@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Soon Moon ($MOON) — Moon: soon. Very soon.</title>
+<meta name="description" content="Soon Moon ($MOON) — a community meme token on Solana, launched on pump.fun. ETA: soon.">
+<meta property="og:title" content="Soon Moon ($MOON)"><meta property="og:description" content="Moon: soon. Very soon. A Solana meme token on pump.fun."><meta property="og:image" content="assets/banner.jpg">
+<meta name="theme-color" content="#050506">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preload" href="assets/fonts/orbitron-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/space-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/moonman.webp" type="image/webp">
+<script>document.documentElement.classList.add('js')</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{silver:"#d6d7db",accent:"#ffb347"}}}}</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.9 2H22l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.7l7.9-9L1.4 2h7l4.8 6.4L18.9 2Zm-1.2 18h1.9L7.4 3.9H5.4L17.7 20Z"/></symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.2-8.3c.4-.4-.1-.6-.6-.2L6.1 13.2 1.3 11.7c-1-.3-1-1 .2-1.5L20.6 2.9c.9-.3 1.6.2 1.3 1.4Z"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2c3.5 2.5 5 6.5 4.5 11l-2 3h-5l-2-3C7 8.5 8.5 4.5 12 2Z"/><circle cx="12" cy="9" r="1.8" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" d="M7.5 13 5 16l3 1M16.5 13 19 16l-3 1M10 19l2 3 2-3"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3 3v18h18M7 15l4-4 3 3 6-7"/></symbol>
+</svg>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="nav glass" id="nav">
+  <a href="#top" class="flex items-center gap-2 font-display text-sm tracking-widest">
+    <picture><source srcset="assets/avatar-thumb.webp" type="image/webp"><img src="assets/avatar-thumb.jpg" alt="Soon Moon mascot" width="34" height="34" class="rounded-full ring-1 ring-white/30"></picture>
+    <span>$MOON</span><span class="hidden sm:inline text-[10px] text-silver/60 font-mono">MISSION CONTROL</span>
+  </a>
+  <nav class="hidden md:flex gap-6 font-mono text-xs uppercase tracking-widest" aria-label="Sections">
+    <a href="#mission" data-nav>Mission</a><a href="#launch" data-nav>Liftoff</a><a href="#sequence" data-nav>Launch Sequence</a><a href="#telemetry" data-nav>Telemetry</a><a href="#log" data-nav>Flight Log</a>
+  </nav>
+  <div class="flex items-center gap-2">
+    <button class="btn-ghost sm" data-copy aria-label="Copy contract address"><svg class="ic"><use href="#i-copy"/></svg><span class="hidden sm:inline">Copy CA</span></button>
+    <a class="btn-primary sm" data-link="buy" target="_blank" rel="noopener" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump">Buy Now</a>
+  </div>
+</header> 
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" id="hero" aria-labelledby="mast">
+  <div class="hero-pin">
+    <div class="layer earth" data-speed="0.2" aria-hidden="true"></div>
+    <div class="layer bigword" data-speed="-0.6" aria-hidden="true">MOON</div>
+    <picture class="layer moonman" data-speed="0.35"><source srcset="assets/moonman.webp" type="image/webp"><img src="assets/moonman.jpg" alt="Soon Moon mascot standing on the lunar surface with Earth rising" width="900" height="600" fetchpriority="high"></picture>
+    <div class="hero-content">
+      <p class="font-mono text-[11px] sm:text-xs tracking-[.3em] text-accent mb-3 tminus">T-MINUS <span id="tm">SOON</span> · SOLANA · PUMP.FUN</p>
+      <h1 id="mast" class="mast font-display" aria-label="Soon Moon">Soon Moon</h1>
+      <p class="lead words">Moon: soon. Very soon. The only mission with an ETA you can always trust.</p>
+      <div class="flex flex-wrap gap-3 mt-6 cta">
+        <a class="btn-primary" data-link="buy" target="_blank" rel="noopener" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump"><svg class="ic"><use href="#i-rocket"/></svg>Buy Now</a>
+        <a class="btn-ghost" data-link="chart" target="_blank" rel="noopener" href="https://dexscreener.com/solana/4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump"><svg class="ic"><use href="#i-chart"/></svg>Chart</a>
+      </div>
+      <div class="ca-box glass mt-4">
+        <span class="font-mono text-[10px] text-silver/60 tracking-widest">CA</span>
+        <code class="ca-val" data-ca>4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump</code>
+        <button class="btn-copy" data-copy aria-label="Copy contract address"><svg class="ic"><use href="#i-copy"/></svg><span class="copy-label">Copy</span></button>
+      </div>
+      <div class="flex gap-2 mt-4" data-socials></div>
+    </div>
+    <div class="portrait" data-speed="0.15">
+      <picture><source srcset="assets/avatar.webp" type="image/webp"><img src="assets/avatar.jpg" alt="Soon Moon mascot portrait" width="420" height="420"></picture>
+      <span class="font-mono">CREW ID · $MOON-001</span>
+    </div>
+  </div>
+</section>
+
+<!-- RIBBONS -->
+<div class="ribbons" aria-hidden="true">
+  <div class="ribbon r1"><div class="track">SOON · SOONER · MOON · ETA: SOON · $MOON · SOON · SOONER · MOON · ETA: SOON · $MOON · SOON · SOONER · MOON · ETA: SOON · $MOON ·&nbsp;</div></div>
+  <div class="ribbon r2"><div class="track">MISSION STATUS: SOON™ · WEN MOON? SOON · ALL SYSTEMS NOMINAL · MISSION STATUS: SOON™ · WEN MOON? SOON · ALL SYSTEMS NOMINAL ·&nbsp;</div></div>
+</div>
+
+<!-- MISSION -->
+<section id="mission" class="sec">
+  <p class="eyebrow">Phase 01 · Mission Brief</p>
+  <h2 class="h2 words">Every moonshot starts with one word: soon.</h2>
+  <div class="grid md:grid-cols-3 gap-4 mt-10">
+    <article class="card glass reveal"><p class="stat font-display">SOON</p><p class="font-mono text-xs text-silver/60">ETA TO MOON</p><p class="mt-3 text-silver/80">Precision-engineered vagueness. We never miss a deadline because we never set one.</p></article>
+    <article class="card glass reveal"><p class="stat font-display">SOL</p><p class="font-mono text-xs text-silver/60">LAUNCH PAD</p><p class="mt-3 text-silver/80">Fair-launched on pump.fun. Fast blocks, tiny fees, more fuel for the trip.</p></article>
+    <article class="card glass reveal"><p class="stat font-display">100%</p><p class="font-mono text-xs text-silver/60">COMMUNITY CREW</p><p class="mt-3 text-silver/80">No roadmap, just a trajectory. The crew is whoever's holding when the engines light.</p></article>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner-sec" aria-label="Soon Moon banner">
+  <div class="banner-clip">
+    <picture><source srcset="assets/banner-sm.webp 800w, assets/banner.webp 1600w" sizes="100vw" type="image/webp"><img class="banner-img" src="assets/banner.jpg" srcset="assets/banner-sm.jpg 800w, assets/banner.jpg 1600w" sizes="100vw" alt="Soon Moon banner: the mascot on the moon with Earth rising beside the words Soon Moon" width="1600" height="533" loading="lazy"></picture>
+    <div class="hud font-mono" aria-hidden="true"><span>LAT 0.6741° N</span><span>LUNAR SURFACE · TRANQUILITY BASE (EVENTUALLY)</span><span>REC ●</span></div>
+  </div>
+</section>
+
+<!-- LAUNCH SCENE -->
+<section id="launch" class="launch" aria-label="Liftoff sequence">
+  <div class="launch-pin">
+    <svg class="traj" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <defs><radialGradient id="mg" cx="40%" cy="35%"><stop offset="0" stop-color="#f4f4f2"/><stop offset=".7" stop-color="#9c9ca0"/><stop offset="1" stop-color="#4a4a50"/></radialGradient></defs>
+      <path id="path" d="M120 560 C 300 520, 420 380, 560 260 S 780 110, 840 110" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6 10"/>
+      <path id="pathlit" d="M120 560 C 300 520, 420 380, 560 260 S 780 110, 840 110" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+      <g id="moon" transform="translate(840 110)"><circle r="60" fill="url(#mg)"/><circle cx="-18" cy="-10" r="10" fill="#7d7d83" opacity=".6"/><circle cx="20" cy="15" r="14" fill="#7d7d83" opacity=".5"/><circle cx="8" cy="-28" r="6" fill="#7d7d83" opacity=".6"/></g>
+      <rect x="90" y="565" width="60" height="8" fill="#888"/>
+      <g id="rocket"><g transform="rotate(90) translate(-20 -12)">
+        <path d="M20 0c9 6 12 16 10 28l-4 6H14l-4-6C8 16 11 6 20 0Z" fill="#eee" stroke="#111" stroke-width="1.2"/>
+        <circle cx="20" cy="14" r="4" fill="#111"/><path d="M10 26 3 34l8 1M30 26l7 8-8 1" fill="#bbb" stroke="#111"/>
+        <path id="flame" d="M15 35c2 9 3 12 5 16 2-4 3-7 5-16Z" fill="var(--accent)"/></g></g>
+    </svg>
+    <div class="readout glass font-mono">
+      <div><small>COUNTDOWN</small><b id="count">T-10</b></div>
+      <div><small>ALTITUDE</small><b><span id="alt">0</span> km</b></div>
+      <div><small>PROGRESS</small><b><span id="pct">0</span>%</b></div>
+      <div class="bar"><i id="bar"></i></div>
+    </div>
+    <div class="captions font-display" aria-live="off"><span class="cap c1">Soon</span><span class="cap c2">Sooner</span><span class="cap c3">MOON</span></div>
+  </div>
+</section>
+
+<!-- HOW TO BUY -->
+<section id="sequence" class="sec">
+  <p class="eyebrow">Phase 02 · Launch Sequence</p>
+  <h2 class="h2 words">How to buy $MOON in four stages.</h2>
+  <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 steps">
+    <li class="card glass reveal"><span class="stage font-mono">STAGE 1</span>
+      <svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 26c0-9 6-16 15-16s14 6 14 14v12c0 2-2 3-3 2l-3-3-3 3-3-3-3 3-3-3-3 3c-1 1-3 0-3-2Z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="20" cy="22" r="2.5" fill="currentColor"/><circle cx="30" cy="22" r="2.5" fill="currentColor"/></svg>
+      <h3>Get Phantom</h3><p>Install the Phantom wallet (or any Solana wallet) from the official site. Write down your seed phrase offline. Never share it.</p></li>
+    <li class="card glass reveal"><span class="stage font-mono">STAGE 2</span>
+      <svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 14h24l-5 5H7Zm5 10h24l-5 5H12Zm-5 10h24l-5 5H7Z" fill="currentColor"/></svg>
+      <h3>Fuel up with SOL</h3><p>Buy SOL on an exchange or inside Phantom, then send it to your wallet. Keep a little extra for network fees.</p></li>
+    <li class="card glass reveal"><span class="stage font-mono">STAGE 3</span>
+      <svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16h26l-6-6M40 32H14l6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h3>Open pump.fun swap</h3><p>Hit <a class="ul" data-link="buy" target="_blank" rel="noopener" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump">Buy Now</a> to open the pump.fun swap with SOL preselected, and connect your wallet.</p></li>
+    <li class="card glass reveal"><span class="stage font-mono">STAGE 4</span>
+      <svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-rocket"/></svg>
+      <h3>Paste CA &amp; swap</h3><p>Paste the official contract address below, check it matches, choose an amount and confirm. Ignition.</p></li>
+  </ol>
+  <div class="ca-box glass mt-8 max-w-2xl">
+    <span class="font-mono text-[10px] text-silver/60 tracking-widest">CA</span><code class="ca-val" data-ca>4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump</code>
+    <button class="btn-copy" data-copy aria-label="Copy contract address"><svg class="ic"><use href="#i-copy"/></svg><span class="copy-label">Copy</span></button>
+  </div>
+  <p class="font-mono text-xs text-silver/60 mt-3">Anti-scam: the only real CA is the one shown on this site. Mission Control will never DM you first or ask for your seed phrase.</p>
+</section>
+
+<!-- TELEMETRY -->
+<section id="telemetry" class="sec">
+  <p class="eyebrow">Phase 03 · Telemetry</p>
+  <h2 class="h2 words">Live flight data. Live soon.</h2>
+  <div class="chart-frame glass mt-10 reveal">
+    <div class="chart-head font-mono"><span><i class="dot"></i>DEXSCREENER FEED</span><a data-link="chart" target="_blank" rel="noopener" href="https://dexscreener.com/solana/4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump" class="ul">Open full chart</a></div>
+    <div class="chart-body">
+      <iframe id="dexframe" title="$MOON price chart on DexScreener" data-src="https://dexscreener.com/solana/4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump?embed=1&theme=dark&trades=0&info=0" loading="lazy"></iframe>
+      <div class="chart-overlay" id="chartOverlay"><svg class="ic big"><use href="#i-chart"/></svg><p class="font-display">Chart goes live at launch</p><p class="font-mono text-xs text-silver/60">AWAITING CONTRACT ADDRESS · ETA: SOON</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="log" class="sec">
+  <p class="eyebrow">Phase 04 · Flight Log</p>
+  <h2 class="h2 words">Questions from the crew.</h2>
+  <div class="mt-10 space-y-3 max-w-3xl">
+    <details class="faq glass reveal"><summary>Wen moon?</summary><p>Soon. Very soon. Our engineers have confirmed it is no later than eventually.</p></details>
+    <details class="faq glass reveal"><summary>What chain is $MOON on?</summary><p>Solana. Launched on pump.fun, so you buy with SOL through the pump.fun swap.</p></details>
+    <details class="faq glass reveal"><summary>Where is the contract address?</summary><p>It appears in the CA box on this page at launch. Until then it reads 4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump — anything else claiming to be $MOON is not us.</p></details>
+    <details class="faq glass reveal"><summary>Is there a roadmap?</summary><p>Step 1: soon. Step 2: sooner. Step 3: moon. We are currently between steps.</p></details>
+    <details class="faq glass reveal"><summary>Is this financial advice?</summary><p>No. $MOON is a meme token for fun with no intrinsic value or expectation of returns. Only spend what you can afford to lose.</p></details>
+  </div>
+</section>
+
+<section class="sec text-center">
+  <h2 class="h2 words mx-auto">Final call for boarding.</h2>
+  <div class="flex flex-wrap justify-center gap-3 mt-8">
+    <a class="btn-primary" data-link="buy" target="_blank" rel="noopener" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump">Buy Now</a>
+    <a class="btn-ghost" data-link="chart" target="_blank" rel="noopener" href="https://dexscreener.com/solana/4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump">Chart</a>
+  </div>
+  <div class="flex justify-center gap-2 mt-6" data-socials></div>
+</section>
+</main>
+
+<footer class="foot">
+  <picture><source srcset="assets/logo.webp" type="image/webp"><img src="assets/logo.png" alt="Soon Moon mascot yearbook logo" width="96" height="96" loading="lazy" class="mx-auto rounded"></picture>
+  <p class="font-display mt-4 tracking-widest">SOON MOON · $MOON</p>
+  <p class="text-silver/60 text-sm mt-3 max-w-xl mx-auto">$MOON is a community meme token. Not affiliated with or endorsed by any person or company. Not financial advice.</p>
+  <p class="font-mono text-[10px] text-silver/40 mt-4">© 2026 MISSION CONTROL · ALL TIMES ARE APPROXIMATELY SOON</p>
+</footer>
+
+<div class="mbar glass" role="region" aria-label="Quick buy">
+  <button class="btn-ghost sm" data-copy aria-label="Copy contract address"><svg class="ic"><use href="#i-copy"/></svg>Copy CA</button>
+  <a class="btn-primary sm flex-1 justify-center" data-link="buy" target="_blank" rel="noopener" href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump">Buy Now</a>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
