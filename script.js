@@ -1,6 +1,6 @@
 /* ===== MISSION CONFIG — edit only this ===== */
 const CONFIG = {
-  CA: "TBA",   // Solana mint address once launched
+  CA: "4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump",   // Solana mint address once launched
   X: "https://x.com/soonmoonelon",
   TG: "https://t.me/soonmoonelon"
 };
@@ -39,7 +39,7 @@ window.__setLaunch = (() => {
   const isCA = v => /^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(v || "");
   const isURL = v => /^https:\/\//.test(v || "");
   const live = isCA(CONFIG.CA);
-  const ca = live ? CONFIG.CA : "TBA";
+  const ca = live ? CONFIG.CA : "4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump";
   const LINKS = {
     buy: `https://swap.pump.fun/?input=${SOL}&output=${ca}`,
     chart: `https://dexscreener.com/solana/${ca}`,
@@ -76,7 +76,7 @@ window.__setLaunch = (() => {
     const lbl = b.querySelector(".copy-label");
     b.classList.add("copied"); if (lbl) lbl.textContent = "Copied";
     setTimeout(() => { b.classList.remove("copied"); if (lbl) lbl.textContent = "Copy"; }, 1800);
-    say(!ok ? "Copy failed — select the address manually" : live ? "Copied CA to clipboard" : "Copied: CA is TBA — launching soon. Only trust this site.");
+    say(!ok ? "Copy failed — select the address manually" : live ? "Copied CA to clipboard" : "Copied: CA is 4cDVSYnzoWsSzYRxe1rETA1hfcgs1ktgpQyeRm6Vpump — launching soon. Only trust this site.");
   }));
 
   // starfield
